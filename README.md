@@ -1,79 +1,39 @@
 
 # Master's Picker
 
-_Final project for the Building AI course_
+_by Mihail, final project for the Building AI course_
 
-## Summary
-The Master's Picker is an AI assistant that uses your input to generate a list of relevant master's programme recommendations. The user provides a set of criteria by answering a questionnaire and specificing the order of significance for each criterion. Using machine leanring methods, the assitant can then produce a list of master's programmes, ranked by how closely they match the user's preferences.
+## ✨ Summary
+The Master's Picker features an AI assistant that uses your input to generate a list of relevant master's programme recommendations. The user provides a set of criteria by answering a questionnaire and specificing the order of significance for each criterion. Using machine leanring methods, the assitant can then produce a list of master's programmes, ranked by how closely they match the user's preferences.
 
 ## Background
+This project idea was motivated by the struggle of me and my peers with naviagting the landscape of available master's programmes. The exisitng platfroms are not only unpleasant to use, but also rely on outdated search methods.\
+\
+To aid this important decision-making process, the following constraints must be eliminated..
+* only using high-level filtering options (e.g. searching by city, instead of just country);
+* not considering dynamic factors (e.g. the latest university ranking);
+* a lack of feedback on the programmes by current students and alumni;
 
-Which problems does your idea solve? How common or frequent is this problem? What is your personal motivation? Why is this topic important or interesting?
+## 2. Usage
+The Master's Picker can be featured on a platform that already has a databse of exisitng masters's programmes. The features extracted from the said data will be used to build a form/questionnaire that allows the user to pick and rank their personal criteria. For example, location, total cost, field of study etc. Eligibility criteria and language of instruction will also be taken into account to filter out unsuitbale results.
 
-This is how you make a list, if you need one:
-* problem 1
-* problem 2
-* etc.
+After sumbitting the form/questionnaire, the user will be presened with an extensive list of options, ranked by their relevance. The list will be interactive, meaning options can be manually voted out or ranked higher/lower.
 
+**This will allow anyone researching masters degrees to narrow down their search to best otpions at the top of the list!**
 
-## How is it used?
+## Data, methods and challenges
+The training data source will be an exisitng databse of master's programmes. This introduces possibly the biggest challenge for the project, which entails sorting these data to ensure sucessful training.
 
-Describe the process of using the solution. In what kind situations is the solution needed (environment, time, etc.)? Who are the users, what kinds of needs should be taken into account?
+The backbone of the project would then be *collaborative filltering* via a K nearest neighbour approach that helps identify the best matching programmes.
 
-Images will make your README look nice!
-Once you upload an image to your repository, you can link link to it like this (replace the URL with file path, if you've uploaded an image to Github.)
-![Cat](https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg)
+User input will provide the basis for the filtering process, and could also be used for *reinforcement learning*. As mentioned, the generated list of recommendations will be interactive, which provides an oportunity for using data on these interactions to train the algorithm. Another challenge arises here in weighing the user feedback against the pre-defined features of each master's programme. A pressing issue would be to find out which features the feedback reletes to.
 
-If you need to resize images, you have to use an HTML tag, like this:
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="300">
-
-This is how you create code examples:
-```
-def main():
-   countries = ['Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden']
-   pop = [5615000, 5439000, 324000, 5080000, 9609000]   # not actually needed in this exercise...
-   fishers = [1891, 2652, 3800, 11611, 1757]
-
-   totPop = sum(pop)
-   totFish = sum(fishers)
-
-   # write your solution here
-
-   for i in range(len(countries)):
-      print("%s %.2f%%" % (countries[i], 100.0))    # current just prints 100%
-
-main()
-```
-
-
-## Data sources and AI methods
-Where does your data come from? Do you collect it yourself or do you use data collected by someone else?
-If you need to use links, here's an example:
-[Twitter API](https://developer.twitter.com/en/docs)
-
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
-
-## Challenges
-
-What does your project _not_ solve? Which limitations and ethical considerations should be taken into account when deploying a solution like this?
-
-## What next?
-
-How could your project grow and become something even more? What kind of skills, what kind of assistance would you  need to move on? 
-
+Finally, this project does not address one of the constarins, mentioned in section 2., namely a lack of feedback on the programmes by current students and alumni. While this could be displayed in the list of recomenndations, integrating it into the collaborative filering method could prove a serious challnge, as it would require weighting the inherent bias of such feedback against factual information, such as location or cost.
 
 ## Acknowledgments
-* This work borrows from the temnplate by Reaktor Innovations and University of Helsinki, for the final project of the Building AI course.
-
-  
-
-* list here the sources of inspiration 
-* do not use code, images, data etc. from others without permission
-* when you have permission to use other people's materials, always mention the original creator and the open source / Creative Commons licence they've used
-  <br>For example: [Sleeping Cat on Her Back by Umberto Salvagnin](https://commons.wikimedia.org/wiki/File:Sleeping_cat_on_her_back.jpg#filelinks) / [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
-* etc
-
-
+* This work borrows the temnplate by Reaktor Innovations and University of Helsinki, for the final project of the Building AI course.
+* Course materials were used for inspiration, in particular the case of the Yle Areena content recommender.
+* ChatGPT-4 was consulted with technical questions to improve this document.
+\
+\
+16 January 2024
