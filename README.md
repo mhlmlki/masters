@@ -3,7 +3,7 @@
 
 *by Mihail, final project for the Building AI course*
 
-## ✨ Summary
+## Summary
 The Master's Picker features an AI assistant that uses your input to generate a list of relevant master's programme recommendations. The user provides a set of completing a form/questionnaire  that also asks to rank the importance of each criterion. Using machine learning methods, the assistant can then produce a list of master's programmes, ranked by how closely they match the user's preferences.
 
 ## 1. Background
